@@ -1,8 +1,9 @@
 pragma solidity 0.4.18;
 
+import "./IGVCampaign.sol";
 // Based on KittyBase.sol
 // https://github.com/axiomzen/cryptokitties-bounty/blob/e0d9c2c90964b1bbb242d8e3e0d9a7786cf21182/contracts/KittyBase.sol
-contract IGVAssetBase {
+contract IGVAssetBase is IGVCampaign{
 
     event Issue(address indexed owner, uint256 certificateId);
     event Transfer(address indexed from, address indexed to, uint256 indexed tokenIdx);
@@ -51,6 +52,7 @@ contract IGVAssetBase {
           owner: _owner
         });
 
+        campaignTokens[_campaignId][_tokenIdx].remaining--;
         uint256 newCertificateId = certificates.push(_certificate) - 1;
 
         Issue(

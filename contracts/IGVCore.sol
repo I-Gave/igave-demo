@@ -1,11 +1,10 @@
 pragma solidity 0.4.18;
 
 import "./IGVAsset.sol";
-import "./IGVCampaign.sol";
 
 // Based on:
 // https://raw.githubusercontent.com/axiomzen/cryptokitties-bounty/e0d9c2c90964b1bbb242d8e3e0d9a7786cf21182/contracts/KittyCore.sol
-contract IGVCore is IGVAsset, IGVCampaign {
+contract IGVCore is IGVAsset {
     address public founderAddress;
     address public ownerAddress;
 
@@ -88,9 +87,8 @@ contract IGVCore is IGVAsset, IGVCampaign {
 
       // Ensure Token is still for sale
       Token storage token = campaignTokens[_campaignId][_tokenIdx];
-      //uint64 issued = campaignTokensIssued[_campaignId];
 
-      //require(issued < uint64(token.supply));
+      require(token.remaining > 0);
       //require(msg.value == uint256(token.price));
 
       //campaignTokensIssued[_campaignId][_tokenIdx] = issued + 1;

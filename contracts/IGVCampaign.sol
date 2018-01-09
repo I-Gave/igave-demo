@@ -1,6 +1,6 @@
 pragma solidity 0.4.18;
 
-contract IGVCampaign {
+contract IGVCampaign  {
     Campaign[] campaigns;
     mapping (uint256 => address) public campaignIndexToOwner;
     mapping (address => uint256[]) public campaignOwnerToIndexes;
@@ -25,6 +25,7 @@ contract IGVCampaign {
     struct Token {
       uint256 campaignId;
       uint64 supply;
+      uint64 remaining;
       string name;
       uint256 price;
     }
@@ -71,6 +72,7 @@ contract IGVCampaign {
       Token memory _token = Token({
         campaignId: _campaignId,
         supply: _supply,
+        remaining: _supply,
         name: _name,
         price: _price
       });
