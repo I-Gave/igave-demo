@@ -67,15 +67,22 @@ truffle(develop)>
 
 ```
 
-Now a local network has been setup, the contracts are deployed and visiting the browser at localhost:4200
+Now a local network has been setup, the contracts are deployed and the front end is ready.
 
 Install Metamask: https://metamask.io/
 
 Connect Metamask to the local Ethereum network
 
-Send yourself some test Ether
+![](https://raw.githubusercontent.com/I-Gave/igave-demo/master/imgs/DemoMetamask0.png)  | ![](https://raw.githubusercontent.com/I-Gave/igave-demo/master/imgs/DemoMetamask1.png)
+
+
+Then Send yourself some test Ether
 ```
 truffle(develop)> web3.eth.sendTransaction({ to: "Your Metamask Address Goes Here", from: web3.eth.accounts[0], value: 1000000000000000000 })
 '0x569cde4ef461a75393c0e7e2e7e82d9773310a32d82eba35187316a53f6484d5'
 ```
+
+Now open the browser to localhost:4200
+
+![](https://raw.githubusercontent.com/I-Gave/igave-demo/master/imgs/Demo0.png)
 
