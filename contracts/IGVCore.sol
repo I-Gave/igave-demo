@@ -77,28 +77,28 @@ contract IGVCore is IGVAsset, IGVCampaign {
       returns (uint)
     {
       // Ensure campaign is valid & active
-      require(_campaignId > 0);
+      // require(_campaignId > 0);
 
       Campaign storage campaign = campaigns[_campaignId];
 
       // Campaign is valid & active
       require(campaign.veto == false);
-     // require(uint256(campaign.startBlock) >= block.number);
+      // require(uint256(campaign.startBlock) >= block.number);
       //require(uint256(campaign.endBlock) <= block.number);
 
       // Ensure Token is still for sale
       Token storage token = campaignTokens[_campaignId][_tokenIdx];
-      uint64 issued = campaignTokensIssued[_campaignId][_tokenIdx];
+      //uint64 issued = campaignTokensIssued[_campaignId];
 
-      require(issued < uint64(token.supply));
-      require(msg.value == uint256(token.price));
+      //require(issued < uint64(token.supply));
+      //require(msg.value == uint256(token.price));
 
-      campaignTokensIssued[_campaignId][_tokenIdx] = issued + 1;
+      //campaignTokensIssued[_campaignId][_tokenIdx] = issued + 1;
       campaignBalance[_campaignId] += msg.value;
 
       totalRaised += msg.value;
 
-      return _createCertificate(_campaignId, _tokenIdx, issued + 1, msg.sender);
+      return _createCertificate(_campaignId, _tokenIdx, 0, msg.sender);
     }
 
 

@@ -99,5 +99,12 @@ contract('IGVCore', (accounts) => {
 
     assert.equal(token[2], 'Test Token');
   });
+  it('Buys the certificate', async () => {
+    const instance = await IGVCore.deployed();
+    await instance.createCertificate(1,0,
+      { from: accounts[0], value: 1 })
+
+    //assert.equal(token[2], 'Test Token');
+  });
 });
 
