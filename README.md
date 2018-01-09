@@ -86,3 +86,32 @@ Now open the browser to localhost:4200
 
 ![](https://raw.githubusercontent.com/I-Gave/igave-demo/master/imgs/Demo0.png)
 
+To start a new campaign, visit the campaign tab:
+
+![](https://raw.githubusercontent.com/I-Gave/igave-demo/master/imgs/Demo1.png)
+
+Give the campaign a name, starting block and ending block. Metamask will automatically provide the browser your account address.
+
+Click Create Campaign
+
+![](https://raw.githubusercontent.com/I-Gave/igave-demo/master/imgs/Demo2.png)
+
+Metamask will open, send the transaction.
+
+![](https://raw.githubusercontent.com/I-Gave/igave-demo/master/imgs/Demo3.png)
+
+The browser will automatically redirect to the 'My Campaigns' tab
+
+![](https://raw.githubusercontent.com/I-Gave/igave-demo/master/imgs/Demo4.png)
+
+Click the gear to manage the new campaign.
+
+![](https://raw.githubusercontent.com/I-Gave/igave-demo/master/imgs/Demo5.png)
+
+Fill in the token information and add it to the campaign.
+
+![](https://raw.githubusercontent.com/I-Gave/igave-demo/master/imgs/Demo6.png)
+
+Refresh the page, the token will be added to the campaign.
+
+For now, you can interact with the contract directly to purchase the token. A feature complete mvp will be up by Jan 13 2018 or sooner.
